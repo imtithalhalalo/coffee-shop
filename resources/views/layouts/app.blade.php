@@ -172,7 +172,31 @@
         <main class="py-4">
             @yield('content')
         </main>
-
+        <footer class="ftco-footer ftco-section bg-gray-800 text-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 p-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="mb-5">
+                        <h2 class="text-lg font-semibold mb-4">About Us</h2>
+                        <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                        <ul class="flex space-x-4">
+                            <li><a href="#"><span class="icon-twitter"></span></a></li>
+                            <li><a href="#"><span class="icon-facebook"></span></a></li>
+                            <li><a href="#"><span class="icon-instagram"></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <h2 class="text-lg font-semibold mb-4">Have a Questions?</h2>
+                        <div class="block">
+                            <ul class="list-none">
+                                <li><span class="icon icon-map-marker"></span><span class="text">San Francisco, California, USA</span></li>
+                                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 263 4743 644</span></a></li>
+                                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@coffeeshop.com</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
