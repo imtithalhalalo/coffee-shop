@@ -121,5 +121,26 @@ class ProductsController extends Controller
         }
     }
 
+    public function checkout() {
+        if (!Auth::check()) {
+            return redirect()->route('login')->with('error', 'You must be logged in to add items to the cart.');
+        }
+        return view('products.checkout');
+    }
+
+    public function storeCheckout(Request $request) {
+        if (!Auth::check()) {
+            return redirect()->route('login')->with('error', 'You must be logged in to add items to the cart.');
+        }
+
+        $checkout = Order::create($request->all());
+
+        if ($checkout) {
+            
+        } else {
+            return "Failed to add item to cart";
+        }
+    }
+
 
 }
