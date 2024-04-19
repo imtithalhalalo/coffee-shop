@@ -43,4 +43,31 @@
     </div>
 </section>
 
+<section class="ftco-section bg-slate-400 ">
+    <div class="container mx-auto">
+        <div class="mb-5 pb-3 text-center ftco-animate">
+            <span class="subheading">Discover</span>
+            <h2 class="mb-4 text-xl md:text-3xl lg:text-4xl">Related products</h2>
+            <p class="text-sm md:text-base">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+        </div>
+        <div class="flex flex-wrap justify-center">
+
+        @foreach ($relatedProducts as $relatedProduct)
+        <div class="w-full sm:w-1/2 md:w-1/4 mb-4 md:mb-0">
+                <div class="menu-entry bg-white rounded-lg overflow-hidden shadow-md">
+                    <a href="{{ route('product.details', $relatedProduct->id) }}" class="block"><img src="{{ asset('assets/'.$relatedProduct->image.'') }}" alt="Coffee Capuccino" class="w-full"></a>
+                    <div class="text py-4 px-6">
+                        <h3 class="text-lg md:text-xl mb-2"><a href="{{ route('product.details', $relatedProduct->id) }}" class="text-coffee-dark">{{ $relatedProduct->name }}</a></h3>
+                        <p class="text-sm md:text-base mb-2">{{ $relatedProduct->description }}</p>
+                        <p class="price text-md md:text-lg font-semibold mb-2"><span>${{ $relatedProduct->price }}</span></p>
+                        <p><a href="{{ route('product.details', $relatedProduct->id) }}" class="btn btn-warning">Show</a></p>
+                    </div>
+                </div>
+            </div>
+
+        @endforeach
+        </div>
+    </div>
+</section>
+
 @endsection
