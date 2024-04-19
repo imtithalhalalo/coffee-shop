@@ -2,6 +2,12 @@
 
 @section('content')
 
+@if(Session::has('success'))
+    <div class="p-4 bg-blue-100 border-l-4 border-yellow-200">
+        <p class="text-sm text-yellow-500">{{ Session::get('success') }}</p>
+    </div>
+@endif
+
 <section class="ftco-section">
     <div class="container mx-auto">
         <div class="flex flex-col md:flex-row">
