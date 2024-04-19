@@ -6,7 +6,8 @@
         <div class="flex flex-col justify-center items-center h-full">
             <span class="subheading text-white text-lg md:text-xl lg:text-2xl font-bold uppercase mb-2">Welcome</span>
             <h1 class="text-white text-center text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">The Best Coffee Testing Experience</h1>
-            <p class="text-white text-center mb-8 md:mb-10 max-w-lg">Coffee, with its rich aroma and bold flavor, is often regarded as the perfect companion for both the early riser's morning ritual and the late-night study session alike.
+            <p class="text-white text-center mb-8 md:mb-10 max-w-lg">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0">
                 <a href="#" class="btn btn-warning px-8 py-3 md:px-10 md:py-4 text-center text-white hover:bg-blue-700 transition duration-300 ease-in-out">Order Now</a>
                 <a href="#" class="btn btn-white btn-outline-white px-8 py-3 md:px-10 md:py-4 text-center hover:bg-white hover:text-black transition duration-300 ease-in-out">View Menu</a>
             </div>
@@ -64,7 +65,32 @@
 </section>
 
 
-
+<section class="bg-coffee-lighter pt-20 pb-16">
+    <div class="container mx-auto">
+        <div class="text-center mb-12">
+            <span class="text-coffee-light subheading">Discover</span>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-coffee-dark mb-4">Best Coffee Sellers</h2>
+            <p class="text-coffee-dark">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+        </div>
+        <div class="flex flex-wrap justify-center -mx-4">
+            @foreach ($products as $product)
+                <div class="w-full md:w-1/4 px-4 mb-8">
+                    <div class="menu-entry bg-white rounded-lg overflow-hidden shadow-md">
+                        <div class="img">
+                            <img src="{{ asset('assets/'.$product->image.'') }}" alt="Coffee Image" class="w-full h-auto">
+                        </div>
+                        <div class="text py-4 px-6">
+                            <h3 class="text-xl mb-2"><a href="{{ route('product.details', $product->id) }}" class="text-coffee-dark">{{ $product->name }}</a></h3>
+                            <p class="text-sm text-coffee-dark mb-2">{{ $product->description }}</p>
+                            <p class="text-coffee-dark text-lg font-semibold mb-2">{{ $product->price }}</p>
+                            <a href="{{ route('product.details', $product->id) }}" class="btn btn-warning">Show</a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
 
 </section>
 
