@@ -64,6 +64,36 @@
         </div>
     </div>
 
+    <div class="flex justify-end mt-5">
+        <div class="w-full lg:w-1/3">
+            <div class="cart-total mb-3">
+                <h3 class="text-center">Cart Totals</h3>
+                <div class="flex justify-between">
+                    <span>Subtotal</span>
+                    <span>${{ $totalPrice }}</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>Delivery</span>
+                    <span>$0.00</span>
+                </div>
+                <hr class="my-2">
+                <div class="flex justify-between font-semibold">
+                    <span>Total</span>
+                    <span>${{ $totalPrice }}</span>
+                </div>
+            </div>
+            @if($cartProducts->count() > 0)
+                <form action="{{ route('prepare.checkout') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="price" value="{{ $totalPrice }}">
+                    <div class="text-center">
+                        <button type="submit" name="submit" class="btn btn-warning py-3 px-4">Proceed to Checkout</button>
+                    </div>
+                </form>
+                
+            @endif
+        </div>
+    </div>
 </section>
 
 @endsection
