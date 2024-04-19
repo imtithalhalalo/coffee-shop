@@ -87,6 +87,20 @@ class ProductsController extends Controller
     }
 
 
-    
+    public function deleteProductFromCart($id) {
+        if (!Auth::check()) {
+            return redirect()->route('login')->with('error', 'You must be logged in to add items to the cart.');
+        }
+        $deleteProductFromCart = Cart::where('prod_id', $id)
+            ->where('user_id', Auth::id())
+            ->delete();
+
+        if ($deleteProductFromCart) {
+            return Redirect::route('cart')->with(['delete' => 'item deleted from cart']);
+
+        } else {
+            return "Failed to delete item from cart";
+        }
+    }
 
 }
