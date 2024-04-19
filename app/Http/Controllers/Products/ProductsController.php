@@ -103,4 +103,23 @@ class ProductsController extends Controller
         }
     }
 
+
+    public function prepareCheckout(Request $request) {
+        if (!Auth::check()) {
+            return redirect()->route('login')->with('error', 'You must be logged in to add items to the cart.');
+        }
+        $value = $request->price;
+        $price = Session::put('price', $value);
+
+        $newPrice = Session::get($price);
+
+        if ($newPrice > 0) {
+            return Redirect::route('checkout');
+
+        } else {
+            return "Failed to checkout cart";
+        }
+    }
+
+
 }
