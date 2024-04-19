@@ -39,5 +39,36 @@ class ProductsController extends Controller
     }
 
 
-    
+    public function addToCart(Request $request, $id) {
+        // Check if the user is authenticated
+        if (!Auth::check()) {
+            // Redirect the user to the login page or return an error response
+            return redirect()->route('login')->with('error', 'You must be logged in to add items to the cart.');
+        }
+       // Retrieve the product details from the request parameters
+        $prod_id = $request->input('prod_id');
+        $name = $request->input('name');
+        $price = $request->input('price');
+        $image = $request->input('image');
+
+        // Create a new cart item
+        $addToCart = Cart::create([
+            'prod_id' => $prod_id,
+            'name' => $name,
+            'price' => $price,
+            'image' => $image,
+            'user_id' => Auth::id(),
+        ]);
+
+        // Check if the cart item was successfully created
+        if ($addToCart) {
+            return Redirect::route('product.details', $id)->with(['success' => 'item added to cart']);
+
+        } else {
+            // Return an error response if the cart item creation failed
+            return "Failed to add item to cart";
+        }
+    }
+
+
 }
