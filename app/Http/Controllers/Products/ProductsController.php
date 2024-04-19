@@ -70,5 +70,23 @@ class ProductsController extends Controller
         }
     }
 
+    
+    public function cart() {
+        // Check if the user is authenticated
+        if (!Auth::check()) {
+            // Redirect the user to the login page or return an error response
+            return redirect()->route('login')->with('error', 'You must be logged in to add items to the cart.');
+        }
+        // Retrieve the cart items for the authenticated user
+        $cartProducts = Cart::where('user_id', Auth::id())->orderBy('id', 'desc')->get();
+
+        $totalPrice = Cart::where('user_id', Auth::id())
+                        ->sum('price');
+        // Return the cart view with the cart items
+        return view('products.cart', compact('cartProducts', 'totalPrice'));
+    }
+
+
+    
 
 }
