@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Product\Product;
 use App\Models\Product\Order;
+use App\Models\Product\Booking;
 use App\Models\Product\Cart;
 use Illuminate\Support\Facades\Auth;
 use Session;
@@ -36,6 +37,13 @@ class ProductsController extends Controller
         ->count();
 
         return view('products.productdetails', compact('product', 'relatedProducts', 'checkingInCart'));
+    }
+
+    public function menu() {
+        $drinks = Product::select()->where('type', 'drinks')->take(8)->get();
+        $desserts = Product::select()->where('type', 'desserts')->take(8)->get();
+        $products = Product::select()->get();
+        return view('products.menu', compact('drinks', 'desserts', 'products'));
     }
 
 
@@ -141,6 +149,32 @@ class ProductsController extends Controller
             return "Failed to add item to cart";
         }
     }
-
+    public function bookTable(Request $request) {
+        // Validate the incoming request data
+        $request->validate([
+            "first_name" => "required|max:40",
+            "last_name" => "required|max:40",
+            "date" => "required|date|after_or_equal:today", // Ensure date is not in the past
+            "time" => "required",
+            "phone" => "required|max:40",
+            "message" => "required"
+        ]);
+    
+        // Check if the date is in the future
+        if ($request->date > date("Y-m-d")) {
+            // Create a new booking record
+            $bookTable = Booking::create($request->all());
+            if ($bookTable) {
+                // Redirect with success message if booking is successful
+                return redirect()->route('home')->with('success', 'Your table is booked successfully.');
+            } else {
+                // Redirect with error message if booking fails
+                return redirect()->route('home')->with('error', 'Failed to book table. Please try again.');
+            }
+        } else {
+            // Redirect with error message if date is in the past
+            return redirect()->route('home')->with('error', 'Please choose a date in the future.');
+        }
+    }    
 
 }
