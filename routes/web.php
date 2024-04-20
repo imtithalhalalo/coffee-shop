@@ -24,10 +24,11 @@ Route::post('products/checkout', [App\Http\Controllers\Products\ProductsControll
 
 
 //booking
-Route::post('products/booking', [App\Http\Controllers\Products\ProductsController::class, 'BookTables'])->name('booking.tables');
+Route::post('/booking', [App\Http\Controllers\Products\ProductsController::class, 'bookTable'])->name('booking.tables');
 
 //menu
 Route::get('products/menu', [App\Http\Controllers\Products\ProductsController::class, 'menu'])->name('products.menu');
 
-//menu
+//user info
 Route::get('users/orders', [App\Http\Controllers\Users\UsersController::class, 'displayOrders'])->name('users.orders');
+Route::get('users/bookings', [App\Http\Controllers\Users\UsersController::class, 'displayBookings'])->name('users.bookings');
