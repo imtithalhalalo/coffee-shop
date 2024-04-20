@@ -8,7 +8,7 @@
     </div>
 @endif
 
-<section class="ftco-section">
+<section class="mt-5 mb-5">
     <div class="container mx-auto">
         <div class="flex flex-col md:flex-row">
             <div class="w-full md:w-1/2 mb-5 md:mb-0 ftco-animate">
