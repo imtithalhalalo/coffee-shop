@@ -5,6 +5,10 @@
 <section>
     <div class="container">
         <div class="row">
+        <div class="px-4 mt-4 sm:px-0">
+            <h3 class="text-base font-semibold leading-7 text-gray-900 fs-1">Our Menu</h3>
+            <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">Please find our menu below.</p>
+        </div>
             <div class="col-md-6">
                 <h3 class="mt-5 fs-2">Desserts</h3>
                 <ul role="list" class="divide-y divide-gray-100">
@@ -60,7 +64,7 @@
             <div class="mt-4 flex justify-between">
             <div>
                 <h3 class="text-sm text-gray-700">
-                <a href="#">
+                <a href="{{ route('product.details', $product->id) }}">
                     <span aria-hidden="true" class="absolute inset-0"></span>
                     {{ $product->name }}
                 </a>
