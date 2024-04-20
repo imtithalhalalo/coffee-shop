@@ -6,7 +6,7 @@
     <div class="container mx-auto px-4">
         <div class="flex justify-center">
             <div class="w-full max-w-md">
-                <form action="#" class="billing-form bg-gray-800 bg-opacity-75 p-4 md:p-8 rounded-lg" method="POST" action="{{ route('login') }}">
+                <form method="POST" action="{{ route('login') }}"  class="billing-form bg-gray-800 bg-opacity-75 p-4 md:p-8 rounded-lg" method="POST" action="{{ route('login') }}">
                     @csrf
                     <h3 class="text-2xl md:text-3xl text-white mb-6">{{ __('Login') }}</h3>
                     <div class="mb-4">
