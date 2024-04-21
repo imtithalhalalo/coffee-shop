@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="bg-cover relative mt-0 p-5" style="background-image: url({{ asset('assets/bg_1.jpg') }});">
+<div class="bg-cover relative mt-0 p-5" style="background-image: url({{ asset('assets/bg_1.jpeg') }});">
     <div class="container mx-auto px-4">
         <div class="flex flex-col justify-center items-center h-full">
             <span class="subheading text-white text-lg md:text-xl lg:text-2xl font-bold uppercase mb-2">Welcome</span>
