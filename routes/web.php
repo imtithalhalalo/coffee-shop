@@ -13,7 +13,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //products
 Route::get('products/product-details/{id}', [App\Http\Controllers\Products\ProductsController::class, 'productDetails'])->name('product.details');
 Route::post('products/product-details/{id}', [App\Http\Controllers\Products\ProductsController::class, 'addToCart'])->name('add.cart');
-Route::get('products/cart', [App\Http\Controllers\Products\ProductsController::class, 'cart'])->name('cart');
+Route::get('products/cart', [App\Http\Controllers\Products\ProductsController::class, 'cart'])->name('cart')->middleware('auth:web');
 Route::get('products/cart-delete/{id}', [App\Http\Controllers\Products\ProductsController::class, 'deleteProductFromCart'])->name('cart.product.delete');
 
 
