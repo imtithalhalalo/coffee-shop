@@ -31,12 +31,16 @@ class ProductsController extends Controller
             ->get();
 
         // checking for products in cart
+        if (isset(Auth::user()->id)) {
+            $checkingInCart = Cart::where('prod_id', $id)
+                ->where('user_id', Auth::id())
+                ->count();
 
-        $checkingInCart = Cart::where('prod_id', $id)
-        ->where('user_id', Auth::id())
-        ->count();
-
-        return view('products.productdetails', compact('product', 'relatedProducts', 'checkingInCart'));
+                return view('products.productdetails', compact('product', 'relatedProducts', 'checkingInCart'));
+        } else {
+            return view('products.productdetails', compact('product', 'relatedProducts'));
+        }
+        
     }
 
     public function menu() {
