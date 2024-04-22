@@ -14,14 +14,13 @@ use Redirect;
 
 class ProductsController extends Controller
 {
-    
 
     public function productDetails($id) {
         $product = Product::find($id);
 
         if (!$product) {
             // Handle the case where the product does not exist
-            abort(404); // Or any other appropriate action
+            abort(404); 
         }
 
         $relatedProducts = Product::where('type', $product->type)
@@ -84,17 +83,17 @@ class ProductsController extends Controller
 
     
     public function cart() {
-        // Check if the user is authenticated
+        
         if (!Auth::check()) {
-            // Redirect the user to the login page or return an error response
+            
             return redirect()->route('login')->with('error', 'You must be logged in to add items to the cart.');
         }
-        // Retrieve the cart items for the authenticated user
+        
         $cartProducts = Cart::where('user_id', Auth::id())->orderBy('id', 'desc')->get();
 
         $totalPrice = Cart::where('user_id', Auth::id())
                         ->sum('price');
-        // Return the cart view with the cart items
+        
         return view('products.cart', compact('cartProducts', 'totalPrice'));
     }
 
@@ -154,7 +153,7 @@ class ProductsController extends Controller
         }
     }
     public function bookTable(Request $request) {
-        // Validate the incoming request data
+        
         $request->validate([
             "first_name" => "required|max:40",
             "last_name" => "required|max:40",
@@ -169,14 +168,14 @@ class ProductsController extends Controller
             // Create a new booking record
             $bookTable = Booking::create($request->all());
             if ($bookTable) {
-                // Redirect with success message if booking is successful
+                
                 return redirect()->route('home')->with('success', 'Your table is booked successfully.');
             } else {
-                // Redirect with error message if booking fails
+                
                 return redirect()->route('home')->with('error', 'Failed to book table. Please try again.');
             }
         } else {
-            // Redirect with error message if date is in the past
+            
             return redirect()->route('home')->with('error', 'Please choose a date in the future.');
         }
     }    
