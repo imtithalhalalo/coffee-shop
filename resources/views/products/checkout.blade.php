@@ -6,7 +6,7 @@
     <div class="container mx-auto p-8">
         <div class="row">
             <div class="col-md-12">
-                <form action="{{ route('process.checkout') }}" method="POST" class="p-3 p-md-5 bg-slate-500">
+                <form action="{{ route('process.checkout') }}" method="POST" class="p-3 p-md-5 bg-slate-100 rounded-md">
 
                     <h3 class="mb-4 fs-1">Billing Details</h3>
                     @csrf
@@ -73,7 +73,7 @@
                         <input type="hidden" class="form-control" name="user_id" value="{{ Auth::id() }}" placeholder="">
                         <div class="col-md-12">
                             <div class="form-group mt-4">
-                                <button type="submit" name="submit" class="btn btn-primary py-3 px-4">
+                                <button type="submit" name="submit" class="btn btn-warning py-3 px-4">
                                     Place an order
                                 </button>
                             </div>
