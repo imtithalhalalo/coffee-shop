@@ -11,6 +11,9 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 
+Route::get('auth/google', [App\Http\Controllers\Users\GoogleAuthController::class, 'redirect'])->name('google-auth');
+Route::get('auth/google/call-back', [App\Http\Controllers\Users\GoogleAuthController::class, 'callbackGoogle']);
+
 Route::group(['prefix'=> 'products'], function () {
     //products
     Route::get('/product-details/{id}', [App\Http\Controllers\Products\ProductsController::class, 'productDetails'])->name('product.details');
