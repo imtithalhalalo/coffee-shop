@@ -90,7 +90,7 @@
                     @csrf
                     <input type="hidden" name="price" value="{{ $totalPrice }}">
                     <div class="text-center">
-                        <button type="submit" name="submit" class="btn btn-warning py-3 px-4">Proceed to Checkout</button>
+                        <button type="submit" name="submit" class="btn bg-[#be9b75] py-3 px-4">Proceed to Checkout</button>
                     </div>
                 </form>
             @endif

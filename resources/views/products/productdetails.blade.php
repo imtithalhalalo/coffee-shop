@@ -29,11 +29,11 @@
                     <input type="hidden" name="image" value="{{ $product->image }}">
                     @if(isset(Auth::user()->id))
                         @if($checkingInCart === 0)
-                            <button type="submit" name="submit" class="btn btn-warning py-3 px-5">
+                            <button type="submit" name="submit" class="btn bg-[#be9b75] py-3 px-5">
                                 Add to Cart
                             </button>
                         @else
-                            <button type="submit" name="submit" class="btn btn-warning py-3 px-5" disabled>
+                            <button type="submit" name="submit" class="btn bg-[#be9b75] py-3 px-5" disabled>
                                 Added to Cart
                             </button>
                         @endif
@@ -61,7 +61,7 @@
                         <h3 class="text-lg md:text-xl mb-2"><a href="{{ route('product.details', $relatedProduct->id) }}" class="text-coffee-dark">{{ $relatedProduct->name }}</a></h3>
                         <p class="text-sm md:text-base mb-2">{{ $relatedProduct->description }}</p>
                         <p class="price text-md md:text-lg font-semibold mb-2"><span>${{ $relatedProduct->price }}</span></p>
-                        <p><a href="{{ route('product.details', $relatedProduct->id) }}" class="btn btn-warning">Show</a></p>
+                        <p><a href="{{ route('product.details', $relatedProduct->id) }}" class="btn bg-[#be9b75]">Show</a></p>
                     </div>
                 </div>
             </div>

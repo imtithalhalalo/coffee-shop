@@ -73,7 +73,7 @@
                         <input type="hidden" class="form-control" name="user_id" value="{{ Auth::id() }}" placeholder="">
                         <div class="col-md-12">
                             <div class="form-group mt-4">
-                                <button type="submit" name="submit" class="btn btn-warning py-3 px-4">
+                                <button type="submit" name="submit" class="btn bg-[#be9b75] py-3 px-4">
                                     Place an order
                                 </button>
                             </div>

@@ -15,7 +15,7 @@
                 </a>
                 <a 
                     href="{{ route('products.menu') }}" 
-                    class="btn btn-warning hover:bg-gray-200 px-8 py-3 text-gray-800 font-semibold ml-4 border rounded shadow">
+                    class="btn bg-[#be9b75] hover:bg-gray-200 px-8 py-3 text-gray-800 font-semibold ml-4 border rounded shadow">
                     Order Now
                 </a>
             </div>
@@ -30,7 +30,7 @@
                     <span class="subheading text-gray-700">Discover</span>
                     <h2 class="mb-4 text-2xl md:text-4xl">Our Menu</h2>
                     <p class="mb-4 text-gray-700">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                    <p><a href="#" class="btn btn-warning px-4 py-3">View Full Menu</a></p>
+                    <p><a href="#" class="btn bg-[#be9b75] px-4 py-3">View Full Menu</a></p>
                 </div>
             </div>
             <div class="w-full md:w-1/2 flex justify-center">
@@ -123,7 +123,7 @@
                                 @endif
                             </div>
                             <div class="form-group ml-md-4">
-                                <button type="submit" name="submit" value="Book" class="btn btn-warning py-3 px-4 ml-2">Book</button>
+                                <button type="submit" name="submit" value="Book" class="btn bg-[#be9b75] py-3 px-4 ml-2">Book</button>
                             </div>
                         </div>
                     </form>
@@ -189,7 +189,7 @@
                 <p class="text-sm font-medium text-gray-900">${{ $product->price }}</p>
                 </div>
 
-                <a href="{{ route('product.details', $product->id) }}" class="btn btn-warning">Show</a>
+                <a href="{{ route('product.details', $product->id) }}" class="btn bg-[#be9b75]">Show</a>
             </div>
         @endforeach
         </div> 

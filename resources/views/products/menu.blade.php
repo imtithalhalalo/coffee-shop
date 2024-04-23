@@ -29,7 +29,7 @@
                 <p class="text-sm font-medium text-gray-900">${{ $product->price }}</p>
                 </div>
 
-                <a href="{{ route('product.details', $product->id) }}" class="btn btn-warning mt-2">Show</a>
+                <a href="{{ route('product.details', $product->id) }}" class="btn bg-[#be9b75] mt-2">Show</a>
             </div>
         @endforeach
     </div>
