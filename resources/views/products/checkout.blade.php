@@ -2,18 +2,18 @@
 
 @section('content')
 
-<section class="bg-slate-900">
+<section class="bg-[#4b2b181b]">
     <div class="container mx-auto p-8">
         <div class="row">
             <div class="col-md-12">
-                <form action="{{ route('process.checkout') }}" method="POST" class="p-3 p-md-5 bg-slate-100 rounded-md">
+                <form action="{{ route('process.checkout') }}" method="POST" class="p-3 p-md-5 bg-white rounded-md">
 
                     <h3 class="mb-4 fs-1">Billing Details</h3>
                     @csrf
                     <div class="row align-items-end">
                         <div class="col-md-6">
                             <div class="form-group mt-2">
-                                <label for="firstname">Firt Name</label>
+                                <label for="firstname">First Name</label>
                                 <input type="text" name="first_name" class="form-control" placeholder="">
                             </div>
                         </div>
@@ -73,7 +73,7 @@
                         <input type="hidden" class="form-control" name="user_id" value="{{ Auth::id() }}" placeholder="">
                         <div class="col-md-12">
                             <div class="form-group mt-4">
-                                <button type="submit" name="submit" class="btn bg-[#be9b75] py-3 px-4">
+                                <button type="submit" name="submit" class="btn bg-[#be9b75] hover:bg-[#be9b75cc] py-3 px-4 text-white">
                                     Place an order
                                 </button>
                             </div>
