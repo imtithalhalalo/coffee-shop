@@ -96,6 +96,17 @@ class ProductsController extends Controller
         
         return view('products.cart', compact('cartProducts', 'totalPrice'));
     }
+    public function clearCart() {
+        if (!Auth::check()) {
+            return redirect()->route('login')->with('error', 'You must be logged in to add items to the cart.');
+        }
+        
+        Cart::where('user_id', Auth::id())->delete();
+    
+        $totalPrice = 0;
+        return view('products.cart', compact('totalPrice'))->with('success', 'Cart has been cleared successfully.');
+    }    
+
 
 
     public function deleteProductFromCart($id) {
@@ -147,7 +158,8 @@ class ProductsController extends Controller
         $checkout = Order::create($request->all());
 
         if ($checkout) {
-            
+            $this->clearCart();
+            return redirect()->route('users.orders')->with('success', 'Your order is on the way!');
         } else {
             return "Failed to add item to cart";
         }
