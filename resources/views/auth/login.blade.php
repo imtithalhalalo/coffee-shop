@@ -15,7 +15,7 @@
                             type="email" 
                             id="email" 
                             name="email" 
-                            class="w-full px-3 py-2 rounded-md text-white focus:outline-none focus:bg-[#eeece7] @error('email') is-invalid @enderror" 
+                            class="w-full px-3 py-2 rounded-md text-black focus:outline-none focus:bg-[#eeece7] @error('email') is-invalid @enderror" 
                             placeholder="Email"
                             value="{{ old('email') }}" 
                             required 
@@ -31,7 +31,7 @@
                             type="password" 
                             id="password" 
                             name="password" 
-                            class="w-full px-3 py-2 rounded-md text-white focus:outline-none focus:bg-[#eeece7] @error('password') is-invalid @enderror"
+                            class="w-full px-3 py-2 rounded-md text-black focus:outline-none focus:bg-[#eeece7] @error('password') is-invalid @enderror"
                             placeholder="Password"
                         >
                     </div>

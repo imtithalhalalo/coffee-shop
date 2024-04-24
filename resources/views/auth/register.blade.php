@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="p-9 p-9 bg-[#eeece7]">
+<section class="p-9 == bg-[#eeece7]">
     <div class="container mx-auto px-4">
         <div class="flex justify-center">
             <div class="w-full max-w-md">
@@ -14,7 +14,7 @@
                             type="text" 
                             id="name" 
                             name="name" 
-                            class="w-full px-3 py-2 rounded-md text-white focus:outline-none focus:bg-[#eeece7] @error('name') border-red-500 @enderror" 
+                            class="w-full px-3 py-2 rounded-md text-black focus:outline-none focus:bg-[#eeece7] @error('name') border-red-500 @enderror" 
                             value="{{ old('name') }}" 
                             required 
                             autocomplete="name"
@@ -32,7 +32,7 @@
                             id="email" 
                             name="email" 
                             placeholder="Email"
-                            class="w-full px-3 py-2 rounded-md text-white focus:outline-none focus:bg-[#eeece7] @error('email') border-red-500 @enderror" 
+                            class="w-full px-3 py-2 rounded-md text-black focus:outline-none focus:bg-[#eeece7] @error('email') border-red-500 @enderror" 
                             value="{{ old('email') }}" 
                             required 
                             autocomplete="email"
@@ -47,7 +47,7 @@
                             type="password" 
                             id="password" 
                             name="password" 
-                            class="w-full px-3 py-2 rounded-md text-white focus:outline-none focus:bg-[#eeece7] @error('password') border-red-500 @enderror" 
+                            class="w-full px-3 py-2 rounded-md text-black focus:outline-none focus:bg-[#eeece7] @error('password') border-red-500 @enderror" 
                             required 
                             autocomplete="new-password"
                             placeholder="Password"
@@ -62,7 +62,7 @@
                             type="password" 
                             id="password-confirm" 
                             name="password_confirmation" 
-                            class="w-full px-3 py-2 rounded-md text-white focus:outline-none focus:bg-[#eeece7]" 
+                            class="w-full px-3 py-2 rounded-md text-black focus:outline-none focus:bg-[#eeece7]" 
                             required 
                             autocomplete="new-password"
                             placeholder="Confirm Password"
@@ -71,7 +71,7 @@
                     <div class="flex justify-center">
                         <button 
                             type="submit" 
-                            class="w-full px-4 py-2 bg-[#4b2b18] hover:bg-[#4b2b18cc] text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+                            class="w-full px-4 py-2 bg-[#4b2b18] hover:bg-[#4b2b18cc] text-white rounded-md focus:outline-none"
                         >
                             {{ __('Register') }}
                         </button>
