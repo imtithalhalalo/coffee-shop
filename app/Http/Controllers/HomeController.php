@@ -27,4 +27,20 @@ class HomeController extends Controller
         $products = Product::select()->orderBy('id', 'desc')->take('4')->get();
         return view('home', compact('products'));
     }
+
+
+    public function services()
+    {
+        return view('pages.services');
+    }
+
+    public function about()
+    {
+        return view('pages.about');
+    }
+
+    public function contact()
+    {
+        return view('pages.contact');
+    }
 }
