@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container p-4">
+<div class="container pt-9 pb-40">
   <div class="px-4 sm:px-0">
     <h3 class="text-base font-semibold leading-7 text-gray-900 fs-1">My Booking Tables</h3>
     <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">Please find your tables that you booked below.</p>

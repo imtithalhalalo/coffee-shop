@@ -2,14 +2,19 @@
 
 @section('content')
 
-<div class="container p-4">
+<div class="container pt-9 pb-40">
   <div class="px-4 sm:px-0">
     <h3 class="text-base font-semibold leading-7 text-gray-900 fs-1">My Orders</h3>
     <p class="mt-1 max-w-2xl text-sm leading-6 text-gray-500">Please find your orders below.</p>
   </div>
 
-  <div class="container p-4">
 
+  <div class="container p-4">
+    @if(Session::has('success'))
+      <div class="p-4 bg-[#fff] border-l-4 border-[#be9b75]">
+          <p class="text-sm text-black">{{ Session::get('success') }}</p>
+      </div>
+    @endif
 
     @if($orders->isEmpty())
     <div class="flex items-center justify-center mt-8">

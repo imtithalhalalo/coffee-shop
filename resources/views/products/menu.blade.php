@@ -4,7 +4,6 @@
 
 
 <div class="bg-white">
-
     <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         <div class="px-4 mt-4 sm:px-0">
             <h3 class="text-base font-semibold leading-7 text-gray-900 fs-1">Our Menu</h3>
@@ -29,7 +28,7 @@
                 <p class="text-sm font-medium text-gray-900">${{ $product->price }}</p>
                 </div>
 
-                <a href="{{ route('product.details', $product->id) }}" class="btn bg-[#be9b75] mt-2">Show</a>
+                <a href="{{ route('product.details', $product->id) }}" class="btn bg-[#be9b75] hover:bg-[#be9b75cc] text-white mt-2">Show</a>
             </div>
         @endforeach
     </div>

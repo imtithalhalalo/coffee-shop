@@ -2,19 +2,20 @@
 
 @section('content')
 
-@if(Session::has('success'))
-    <div class="p-4 bg-blue-100 border-l-4 border-yellow-200">
-        <p class="text-sm text-yellow-500">{{ Session::get('success') }}</p>
-    </div>
-@endif
 
-<section class="mt-5 mb-5">
+
+<section class="p-5">
     <div class="container mx-auto">
         <div class="flex flex-col md:flex-row">
             <div class="w-full md:w-1/2 mb-5 md:mb-0 ftco-animate">
                 <a href="{{ asset('assets/'.$product->image.'') }}" class="image-popup"><img src="{{ asset('assets/'.$product->image.'') }}" class="w-full" alt="Colorlib Template"></a>
             </div>
             <div class="w-full md:w-1/2 md:pl-5 ftco-animate">
+            @if(Session::has('success'))
+                <div class="p-4 bg-[#fff] border-l-4 border-[#be9b75] mb-1">
+                    <p class="text-sm text-black">{{ Session::get('success') }}</p>
+                </div>
+            @endif
                 <h3 class="text-xl md:text-3xl mb-2">{{ $product->name }}</h3>
                 <p class="price text-lg md:text-xl mb-4"><span>${{ $product->price }}</span></p>
                 <p class="text-sm md:text-base mb-4">{{ $product->description }}</p>
@@ -29,7 +30,7 @@
                     <input type="hidden" name="image" value="{{ $product->image }}">
                     @if(isset(Auth::user()->id))
                         @if($checkingInCart === 0)
-                            <button type="submit" name="submit" class="btn bg-[#be9b75] py-3 px-5">
+                            <button type="submit" name="submit" class="btn bg-[#be9b75] py-3 px-5 hover:bg-[#be9b75cc] text-white">
                                 Add to Cart
                             </button>
                         @else
@@ -44,7 +45,7 @@
     </div>
 </section>
 
-<section class="ftco-section bg-slate-400 ">
+<section class="p-9 bg-white">
     <div class="container mx-auto">
         <div class="mb-5 pb-3 text-center ftco-animate">
             <span class="subheading">Discover</span>
@@ -54,14 +55,14 @@
         <div class="flex flex-wrap justify-center">
 
         @foreach ($relatedProducts as $relatedProduct)
-        <div class="w-full sm:w-1/2 md:w-1/4 mb-4 md:mb-0">
+        <div class="w-full sm:w-1/2 md:w-1/4 mb-4 md:mb-0 m-1">
                 <div class="menu-entry bg-white rounded-lg overflow-hidden shadow-md">
                     <a href="{{ route('product.details', $relatedProduct->id) }}" class="block"><img src="{{ asset('assets/'.$relatedProduct->image.'') }}" alt="Coffee Capuccino" class="w-full"></a>
                     <div class="text py-4 px-6">
                         <h3 class="text-lg md:text-xl mb-2"><a href="{{ route('product.details', $relatedProduct->id) }}" class="text-coffee-dark">{{ $relatedProduct->name }}</a></h3>
                         <p class="text-sm md:text-base mb-2">{{ $relatedProduct->description }}</p>
                         <p class="price text-md md:text-lg font-semibold mb-2"><span>${{ $relatedProduct->price }}</span></p>
-                        <p><a href="{{ route('product.details', $relatedProduct->id) }}" class="btn bg-[#be9b75]">Show</a></p>
+                        <p><a href="{{ route('product.details', $relatedProduct->id) }}" class="btn bg-[#be9b75] hover:bg-[#be9b75cc] text-white">Show</a></p>
                     </div>
                 </div>
             </div>
