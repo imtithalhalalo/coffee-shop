@@ -13,6 +13,7 @@ Route::get('/services', [HomeController::class, 'services'])->name('services');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('products/menu', [ProductsController::class, 'menu'])->name('products.menu');
+Route::get('products/product-details/{id}', [ProductsController::class, 'productDetails'])->name('product.details');
 
 // Authentication routes
 Auth::routes();
@@ -26,7 +27,7 @@ Route::group(['middleware' => ['auth:web']], function () {
 
     // Products routes
     Route::group(['prefix'=> 'products'], function () {
-        Route::get('/product-details/{id}', [ProductsController::class, 'productDetails'])->name('product.details');
+        
         Route::post('/product-details/{id}', [ProductsController::class, 'addToCart'])->name('add.cart');
         Route::get('/cart', [ProductsController::class, 'cart'])->name('cart');
         Route::get('/cart-delete/{id}', [ProductsController::class, 'deleteProductFromCart'])->name('cart.product.delete');
