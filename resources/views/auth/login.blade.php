@@ -2,11 +2,11 @@
 
 @section('content')
 
-<section class="ftco-section">
+<section class="p-9 bg-[#eeece7]">
     <div class="container mx-auto px-4">
         <div class="flex justify-center">
             <div class="w-full max-w-md">
-                <form method="POST" action="{{ route('login') }}"  class="billing-form bg-gray-800 bg-opacity-75 p-4 md:p-8 rounded-lg" method="POST" action="{{ route('login') }}">
+                <form method="POST" action="{{ route('login') }}"  class="bg-[#be9b75] bg-opacity-75 p-4 md:p-8 rounded-lg" method="POST" action="{{ route('login') }}">
                     @csrf
                     <h3 class="text-2xl md:text-3xl text-white mb-6">{{ __('Login') }}</h3>
                     <div class="mb-4">
@@ -15,7 +15,7 @@
                             type="email" 
                             id="email" 
                             name="email" 
-                            class="w-full px-3 py-2 rounded-md bg-gray-700 text-white focus:outline-none focus:bg-gray-600 @error('email') is-invalid @enderror" 
+                            class="w-full px-3 py-2 rounded-md text-white focus:outline-none focus:bg-[#eeece7] @error('email') is-invalid @enderror" 
                             placeholder="Email"
                             value="{{ old('email') }}" 
                             required 
@@ -31,19 +31,19 @@
                             type="password" 
                             id="password" 
                             name="password" 
-                            class="w-full px-3 py-2 rounded-md bg-gray-700 text-white focus:outline-none focus:bg-gray-600 @error('password') is-invalid @enderror"
+                            class="w-full px-3 py-2 rounded-md text-white focus:outline-none focus:bg-[#eeece7] @error('password') is-invalid @enderror"
                             placeholder="Password"
                         >
                     </div>
                     <div class="flex justify-content-end ">
                         @if (Route::has('password.request'))
-                            <a class="btn btn-link" href="{{ route('password.request') }}">
+                            <a class="btn btn-link text-[#4b2b18]" href="{{ route('password.request') }}">
                                 {{ __('Forgot Your Password?') }}
                             </a>
                         @endif
                         <button 
                             type="submit" 
-                            class="px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600 w-25">
+                            class="px-3 py-1 bg-[#4b2b18] text-white rounded-md hover:bg-[#4b2b18cc] w-25">
                             Log In
                         </button>
                     </div>
@@ -55,7 +55,7 @@
                     </div>
                     <div class="text-center mb-6">
                         <a href="{{ route('google-auth') }}">
-                            <div class="w-2/3 mx-auto px-4 py-2 bg-[#1f2937] text-white rounded-md hover:bg-[#1f2937cc] focus:outline-none focus:bg-[#1f2937cc]">
+                            <div class="w-2/3 mx-auto px-4 py-2 bg-[#4b2b18] text-white rounded-md hover:bg-[#4b2b18cc] focus:outline-none focus:bg-[#1f2937cc]">
                                 <div class="flex flex-row justify-between align-items-center ">
                                     <div>
                                     <svg fill='#fff' xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 32 32">

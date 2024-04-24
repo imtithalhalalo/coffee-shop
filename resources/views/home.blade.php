@@ -10,12 +10,12 @@
             <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0">
                 <a 
                     href="{{ route('products.menu') }}" 
-                    class="btn bg-white hover:bg-gray-200 px-8 py-3 text-gray-800 font-semibold ml-4 border border-gray-300 rounded shadow">
+                    class="btn bg-white hover:bg-white px-8 py-3 text-gray-800 font-semibold ml-4 border border-gray-300 rounded shadow">
                     View Menu
                 </a>
                 <a 
                     href="{{ route('products.menu') }}" 
-                    class="btn bg-[#be9b75] hover:bg-gray-200 px-8 py-3 text-gray-800 font-semibold ml-4 border rounded shadow">
+                    class="btn bg-[#be9b75] hover:bg-white px-8 py-3 text-gray-800 font-semibold ml-4 border rounded shadow">
                     Order Now
                 </a>
             </div>
@@ -30,10 +30,10 @@
                     <span class="subheading text-gray-700">Discover</span>
                     <h2 class="mb-4 text-2xl md:text-4xl">Our Menu</h2>
                     <p class="mb-4 text-gray-700">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-                    <p><a href="#" class="btn bg-[#be9b75] px-4 py-3">View Full Menu</a></p>
+                    <p><a href="{{ route('products.menu') }}" class="btn bg-[#be9b75] px-4 py-3 text-white hover:bg-[#be9b75cc]">View Full Menu</a></p>
                 </div>
             </div>
-            <div class="w-full md:w-1/2 flex justify-center">
+            <div class="w-full md:w-1/2 flex justify-center ">
                 <img src="{{ asset('assets/coffee.jpeg') }}" alt="Image Description" class="w-50 h-auto">
             </div>
         </div>
@@ -64,8 +64,8 @@
             <div class="w-full md:w-1/2 flex justify-center">
                 <div class="book p-4">
                     @if(Session::has('success'))
-                        <div class="p-4 bg-yellow-100 border-l-4 border-yellow-200">
-                            <p class="text-sm text-yellow-500">{{ Session::get('success') }}</p>
+                        <div class="p-4 bg-[#fff] border-l-4 border-[#be9b75]">
+                            <p class="text-sm text-black">{{ Session::get('success') }}</p>
                         </div>
                     @endif
 
@@ -123,7 +123,7 @@
                                 @endif
                             </div>
                             <div class="form-group ml-md-4">
-                                <button type="submit" name="submit" value="Book" class="btn bg-[#be9b75] py-3 px-4 ml-2">Book</button>
+                                <button type="submit" name="submit" value="Book" class="btn bg-[#be9b75] hover:bg-[#be9b75cc] text-white py-3 px-4 ml-2">Book</button>
                             </div>
                         </div>
                     </form>
@@ -137,7 +137,7 @@
     <div class="container mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="flex flex-col items-center justify-center text-center px-4">
-                <span class="w-20 h-20 bg-gray-200 rounded-full flex items-center justify-center mb-5">
+                <span class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-5">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 0 1 9 9v.375M10.125 2.25A3.375 3.375 0 0 1 13.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 0 1 3.375 3.375M9 15l2.25 2.25L15 12" />
                     </svg>
@@ -146,15 +146,15 @@
                 <p class="text-gray-600">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
             </div>
             <div class="flex flex-col items-center justify-center text-center px-4">
-                <span class="w-20 h-20 bg-gray-200 rounded-full flex items-center justify-center mb-5">
+                <span class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-5">
                     <img src="{{ asset('assets/delivery-truck.png') }}" class="w-12 h-12">
                 </span>
                 <h3 class="text-lg font-semibold mb-2">Fastest Delivery</h3>
                 <p class="text-gray-600">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
             </div>
             <div class="flex flex-col items-center justify-center text-center px-4">
-                <span class="w-20 h-20 bg-gray-200 rounded-full flex items-center justify-center mb-5">
-                    <img src="{{ asset('assets/coffee-cup.png') }}" class="w-10 h-10 ml-2">
+                <span class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-5">
+                    <img src="{{ asset('assets/coffee-beans.png') }}" class="w-10 h-10">
                 </span>
                 <h3 class="text-lg font-semibold mb-2">Quality Coffee</h3>
                 <p class="text-gray-600">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
@@ -173,7 +173,7 @@
         <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-4 xl:gap-x-8" id="v-pills-2">
             @foreach($products as $product)
             <div class="group relative">
-                <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
+                <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-white lg:aspect-none group-hover:opacity-75 lg:h-80">
                 <img src="{{ asset('assets/'.$product->image.'') }}" alt="Front of men&#039;s Basic Tee in black." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                 </div>
                 <div class="mt-4 flex justify-between">
@@ -189,7 +189,7 @@
                 <p class="text-sm font-medium text-gray-900">${{ $product->price }}</p>
                 </div>
 
-                <a href="{{ route('product.details', $product->id) }}" class="btn bg-[#be9b75]">Show</a>
+                <a href="{{ route('product.details', $product->id) }}" class="btn bg-[#be9b75] text-white hover:bg-[#be9b75cc]">Show</a>
             </div>
         @endforeach
         </div> 

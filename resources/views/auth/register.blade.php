@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="ftco-section">
+<section class="p-9 p-9 bg-[#eeece7]">
     <div class="container mx-auto px-4">
         <div class="flex justify-center">
             <div class="w-full max-w-md">
-                <form method="POST" action="{{ route('register') }}" class="billing-form bg-gray-800 bg-opacity-75 p-4 md:p-8 rounded-lg">
+                <form method="POST" action="{{ route('register') }}" class="bg-[#be9b75] bg-opacity-75 p-4 md:p-8 rounded-lg">
                     @csrf
                     <h3 class="text-2xl md:text-3xl text-white mb-6">{{ __('Register') }}</h3>
                     <div class="mb-4">
@@ -14,10 +14,11 @@
                             type="text" 
                             id="name" 
                             name="name" 
-                            class="w-full px-3 py-2 rounded-md bg-gray-700 text-white focus:outline-none focus:bg-gray-600 @error('name') border-red-500 @enderror" 
+                            class="w-full px-3 py-2 rounded-md text-white focus:outline-none focus:bg-[#eeece7] @error('name') border-red-500 @enderror" 
                             value="{{ old('name') }}" 
                             required 
-                            autocomplete="name" 
+                            autocomplete="name"
+                            placeholder="Name" 
                             autofocus
                         >
                         @error('name')
@@ -30,7 +31,8 @@
                             type="email" 
                             id="email" 
                             name="email" 
-                            class="w-full px-3 py-2 rounded-md bg-gray-700 text-white focus:outline-none focus:bg-gray-600 @error('email') border-red-500 @enderror" 
+                            placeholder="Email"
+                            class="w-full px-3 py-2 rounded-md text-white focus:outline-none focus:bg-[#eeece7] @error('email') border-red-500 @enderror" 
                             value="{{ old('email') }}" 
                             required 
                             autocomplete="email"
@@ -45,9 +47,10 @@
                             type="password" 
                             id="password" 
                             name="password" 
-                            class="w-full px-3 py-2 rounded-md bg-gray-700 text-white focus:outline-none focus:bg-gray-600 @error('password') border-red-500 @enderror" 
+                            class="w-full px-3 py-2 rounded-md text-white focus:outline-none focus:bg-[#eeece7] @error('password') border-red-500 @enderror" 
                             required 
                             autocomplete="new-password"
+                            placeholder="Password"
                         >
                         @error('password')
                             <span class="text-red-500 text-sm mt-1">{{ $message }}</span>
@@ -59,15 +62,16 @@
                             type="password" 
                             id="password-confirm" 
                             name="password_confirmation" 
-                            class="w-full px-3 py-2 rounded-md bg-gray-700 text-white focus:outline-none focus:bg-gray-600" 
+                            class="w-full px-3 py-2 rounded-md text-white focus:outline-none focus:bg-[#eeece7]" 
                             required 
                             autocomplete="new-password"
+                            placeholder="Confirm Password"
                         >
                     </div>
                     <div class="flex justify-center">
                         <button 
                             type="submit" 
-                            class="w-full px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+                            class="w-full px-4 py-2 bg-[#4b2b18] hover:bg-[#4b2b18cc] text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
                         >
                             {{ __('Register') }}
                         </button>

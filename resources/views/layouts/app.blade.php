@@ -32,9 +32,9 @@
                         <div class="flex space-x-4">
                             <a href="{{ route('home') }}" class="text-black hover:bg-[#fff] hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
                             <a href="{{ route('products.menu') }}" class="text-black hover:bg-[#fff] hover:text-white px-3 py-2 rounded-md text-sm font-medium">Menu</a>
-                            <a href="{{ route('home') }}" class="text-black hover:bg-[#fff] hover:text-white px-3 py-2 rounded-md text-sm font-medium">Services</a>
-                            <a href="{{ route('home') }}" class="text-black hover:bg-[#fff] hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
-                            <a href="#" class="text-black hover:bg-[#fff] hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                            <a href="{{ route('services') }}" class="text-black hover:bg-[#fff] hover:text-white px-3 py-2 rounded-md text-sm font-medium">Services</a>
+                            <a href="{{ route('about') }}" class="text-black hover:bg-[#fff] hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+                            <a href="{{ route('contact') }}" class="text-black hover:bg-[#fff] hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
                         </div>
                         <a href="{{ route('cart') }}" class="ml-4 mr-8 flex-shrink-0 flex items-center text-black hover:text-white">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -51,11 +51,11 @@
                             @endif
                         @else
                         <li class="relative inline-block text-left">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle text-white " href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
 
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu dropdown-menu-end focus:bg-[#be9b75]" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('users.orders') }}">
                                     {{ __('My Orders') }}
                                 </a>
